@@ -1,0 +1,141 @@
+/* NeoPop-specific styles */
+.neopop-button {
+  position: relative;
+  overflow: visible;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+.neopop-button .button-text {
+  position: relative;
+  z-index: 2;
+}
+
+.neopop-button .button-edge {
+  display: none;
+}
+
+.neopop-button .button-shadow {
+  display: none;
+}
+
+.neopop-button.neopop-pressed {
+  transform: none;
+}
+
+.neopop-button.neopop-hover {
+  filter: none;
+}
+
+.neopop-display {
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: none;
+}
+
+.neopop-display::before {
+  display: none;
+}
+
+.neopop-slider-container {
+  position: relative;
+  padding: 10px 0;
+}
+
+.neopop-slider {
+  position: relative;
+  z-index: 2;
+}
+
+.neopop-slider::-webkit-slider-thumb {
+  box-shadow: none;
+  transition: none;
+}
+
+.neopop-slider::-webkit-slider-thumb:hover {
+  box-shadow: none;
+}
+
+.neopop-slider::-webkit-slider-runnable-track {
+  background: var(--surface-color);
+  height: 8px;
+  border-radius: 0;
+  border: 2px solid var(--primary-color);
+}
+
+.neopop-checkbox-label {
+  position: relative;
+  transition: none;
+}
+
+.neopop-checkbox-label.neopop-hover {
+  transform: none;
+}
+
+.neopop-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 0;
+  margin-right: 10px;
+  position: relative;
+  vertical-align: middle;
+  background-color: var(--surface-color);
+  box-shadow: none;
+  transition: none;
+}
+
+.neopop-checkbox.neopop-checked {
+  background-color: var(--primary-color);
+}
+
+.neopop-checkbox.neopop-checked::after {
+  content: '✓';
+  position: absolute;
+  color: black;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.neopop-meter {
+  border: 2px solid var(--primary-color);
+  box-shadow: none;
+}
+
+/* Remove animation effects */
+@keyframes neopop-glow {
+  0%, 50%, 100% {
+    box-shadow: none;
+  }
+}
+
+.copy-notification {
+  animation: none;
+}
+
+/* Tooltip enhancements */
+.tooltip::before {
+  border: 2px solid var(--primary-color);
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Password strength colors */
+.strength-weak {
+  color: var(--primary-color);
+}
+
+.strength-medium {
+  color: var(--primary-color);
+}
+
+.strength-strong {
+  color: var(--primary-color);
+}
+
+.strength-very-strong {
+  color: var(--primary-color);
+}

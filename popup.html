@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/neopop.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="images/logo.png" alt="Secure Password Generator Logo" class="app-logo">
+            <h1>Secure Password Generator</h1>
+        </div>
+        
+        <div class="password-display">
+            <input type="text" id="password-output" readonly>
+            <button id="copy-button" class="copy-btn">
+                <span>Copy</span>
+            </button>
+        </div>
+        
+        <div class="strength-meter">
+            <div class="strength-title">Password Strength</div>
+            <div class="meter-container">
+                <div id="strength-meter-bar" class="meter-bar"></div>
+            </div>
+            <div id="strength-text" class="strength-text">Medium</div>
+        </div>
+        
+        <div class="password-info">
+            <div id="crack-time" class="info-item">
+                <span class="info-label">Est. Crack Time:</span>
+                <span class="info-value">3 million years</span>
+            </div>
+            <div id="entropy" class="info-item">
+                <span class="info-label">Entropy:</span>
+                <span class="info-value">72 bits</span>
+            </div>
+            <div id="combinations" class="info-item">
+                <span class="info-label">Combinations:</span>
+                <span class="info-value">4.7 trillion</span>
+            </div>
+        </div>
+        
+        <div class="length-control">
+            <div class="control-label">
+                <span>Password Length:</span>
+                <span id="length-value">16</span>
+            </div>
+            <div class="slider-container">
+                <input type="range" id="length-slider" min="8" max="64" value="16">
+            </div>
+        </div>
+        
+        <div class="options-container">
+            <div class="option-title">Password Options</div>
+            
+            <div class="option-item">
+                <label for="uppercase">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span class="option-label">Uppercase Letters (A-Z)</span>
+                </label>
+                <div class="tooltip" data-tooltip="Include uppercase letters to increase password strength">?</div>
+            </div>
+            
+            <div class="option-item">
+                <label for="lowercase">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span class="option-label">Lowercase Letters (a-z)</span>
+                </label>
+                <div class="tooltip" data-tooltip="Include lowercase letters for better compatibility">?</div>
+            </div>
+            
+            <div class="option-item">
+                <label for="numbers">
+                    <input type="checkbox" id="numbers" checked>
+                    <span class="option-label">Numbers (0-9)</span>
+                </label>
+                <div class="tooltip" data-tooltip="Include numbers to meet common password requirements">?</div>
+            </div>
+            
+            <div class="option-item">
+                <label for="symbols">
+                    <input type="checkbox" id="symbols" checked>
+                    <span class="option-label">Special Characters (!@#$%^&*)</span>
+                </label>
+                <div class="tooltip" data-tooltip="Include special characters for maximum security">?</div>
+            </div>
+            
+            <div class="option-item">
+                <label for="exclude-similar">
+                    <input type="checkbox" id="exclude-similar">
+                    <span class="option-label">Exclude Similar Characters (1, l, I, 0, O)</span>
+                </label>
+                <div class="tooltip" data-tooltip="Exclude characters that look similar to improve readability">?</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="standards-info">Meets NIST SP 800-63B requirements</div>
+            <div class="ad-banner">
+                <a href="https://www.harshith.io/subscribe" target="_blank" class="banner-link">
+                    <div class="banner-content">
+                        <div class="banner-icon">🤖</div>
+                        <div class="banner-text">
+                            <strong>AI Insights Weekly</strong>
+                            <span>Join 1000+ builders exploring the frontiers of AI</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="byline">Built by <a href="https://www.harshith.io" target="_blank">Harshith Vaddiparthy</a></div>
+        </div>
+    </div>
+    
+    <div id="copy-notification" class="copy-notification">
+        Password copied to clipboard!
+    </div>
+    
+    <script src="js/password-generator.js"></script>
+    <script src="js/password-strength-analyzer.js"></script>
+    <script src="js/preferences-manager.js"></script>
+    <script src="js/copy-handler.js"></script>
+    <script src="js/neopop-integration.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>

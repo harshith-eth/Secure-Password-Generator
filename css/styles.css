@@ -1,0 +1,467 @@
+/* Base Styles */
+:root {
+  --primary-color: #333333;
+  --primary-dark: #1A1A1A;
+  --primary-light: #4A4A4A;
+  --secondary-color: #2A2A2A;
+  --text-color: #FFFFFF;
+  --text-light: #AAAAAA;
+  --background-color: #000000;
+  --surface-color: #1A1A1A;
+  --error-color: #FF5252;
+  --success-color: #00C853;
+  --warning-color: #FFAB00;
+  --border-radius: 0px;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: white;
+  width: 380px;
+  min-height: 580px;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  -webkit-text-fill-color: white;
+  background: none;
+  margin: 0;
+}
+
+.app-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* Password Display Styles */
+.password-display {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--surface-color);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+#password-output {
+  flex: 1;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.copy-btn {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: none;
+  border-left: 1px solid var(--primary-dark);
+  padding: 0 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.copy-btn:active {
+  transform: translateY(1px);
+}
+
+.copy-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary-light), var(--secondary-color));
+  z-index: -1;
+  border-radius: var(--border-radius);
+}
+
+/* Strength Meter Styles */
+.strength-meter {
+  margin-bottom: 20px;
+}
+
+.strength-title {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--text-light);
+}
+
+.meter-container {
+  height: 8px;
+  background-color: var(--surface-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.meter-bar {
+  height: 100%;
+  width: 50%;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.strength-text {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  color: #FFAB00;
+}
+
+/* Password Info Styles */
+.password-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  box-shadow: none;
+  border: none;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#combinations {
+  grid-column: span 2;
+}
+
+/* Length Control Styles */
+.length-control {
+  margin-bottom: 20px;
+}
+
+.control-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.slider-container {
+  position: relative;
+}
+
+#length-slider {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--surface-color);
+  outline: none;
+  border-radius: 4px;
+  border: none;
+}
+
+#length-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+}
+
+#length-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  cursor: pointer;
+  border: none;
+  box-shadow: none;
+}
+
+/* Options Container Styles */
+.options-container {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: none;
+}
+
+.option-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.option-item label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex: 1;
+}
+
+.option-item input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--primary-light);
+  border-radius: var(--border-radius);
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  background-color: var(--surface-color);
+}
+
+.option-item input[type="checkbox"]:checked {
+  background-color: var(--primary-light);
+}
+
+.option-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: black;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.option-label {
+  font-size: 14px;
+}
+
+.tooltip {
+  width: 18px;
+  height: 18px;
+  background-color: var(--text-light);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  cursor: help;
+  margin-left: 8px;
+  position: relative;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  padding: 8px;
+  border-radius: 4px;
+  width: 200px;
+  font-size: 12px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  z-index: 10;
+  pointer-events: none;
+  border: none;
+}
+
+.tooltip:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Footer Styles */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.standards-info {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.ad-banner {
+  margin: 16px 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.banner-link {
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #2C3E50, #3498DB);
+  color: var(--text-color);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.banner-link:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.banner-content {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.banner-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.banner-text {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.banner-text strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.banner-text span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.byline {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 12px;
+}
+
+.byline a {
+  color: var(--text-light);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--text-light);
+}
+
+.byline a:hover {
+  opacity: 0.8;
+}
+
+.creator-banner {
+  padding: 12px;
+  background: linear-gradient(to right, var(--primary-dark), var(--surface-color));
+  border-radius: var(--border-radius);
+  margin-top: 16px;
+}
+
+.creator-banner p {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+.creator-banner a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.creator-banner a:hover {
+  opacity: 0.8;
+}
+
+.newsletter-link {
+  margin-top: 8px;
+}
+
+.newsletter-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--primary-light);
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Copy Notification */
+.copy-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: var(--primary-light);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  box-shadow: none;
+  border: none;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.copy-notification.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}

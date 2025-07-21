@@ -2,9 +2,22 @@
 
 <div align="center">
 
-<img src="images/logo.png" alt="Secure Password Generator Logo" width="120" height="120">
-
 **A powerful, secure, and user-friendly Chrome extension for generating cryptographically strong passwords**
+
+### 🎯 Extension Preview
+
+<table>
+<tr>
+<td align="center">
+<img src="images/extension-ui-1.png" alt="Extension UI - Main Interface" width="300">
+<br><em>Main Password Generator Interface</em>
+</td>
+<td align="center">
+<img src="images/extension-ui-2.png" alt="Extension UI - Settings & Options" width="300">
+<br><em>Advanced Settings & Security Analysis</em>
+</td>
+</tr>
+</table>
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Under%20Review-yellow?style=for-the-badge&logo=googlechrome)](https://chrome.google.com/webstore)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)

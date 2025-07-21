@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Secure Password Generator Logo](images/logo.png)
+<img src="images/logo.png" alt="Secure Password Generator Logo" width="120" height="120">
 
 **A powerful, secure, and user-friendly Chrome extension for generating cryptographically strong passwords**
 
